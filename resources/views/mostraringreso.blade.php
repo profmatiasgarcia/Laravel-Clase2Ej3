@@ -9,24 +9,25 @@ Debería haber recibido una copia de la Licencia Pública General junto con este
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
     <style>
         body {
             background-color: #a7d4ef;
         }
-
     </style>
 </head>
-
 <body>
-
     <div class="card-header tex">
         <h1> Ingreso a la Encuesta</h1>
     </div>
     <table class="table">
         <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Institución</th>
@@ -39,7 +40,8 @@ Debería haber recibido una copia de la Licencia Pública General junto con este
         </thead>
         <tbody>
             <tr>
-                <th scope="row">{{ $request->nombre }}</th>
+                <th scope="row">1</th>
+                <td>{{ $request->nombre }}</td>
                 <td>{{ $request->apellido }}</td>
                 <td>{{ $request->institucion }}</td>
                 <td>{{ $request->carrera }}</td>
@@ -51,5 +53,4 @@ Debería haber recibido una copia de la Licencia Pública General junto con este
         </tbody>
     </table>
 </body>
-
 </html>

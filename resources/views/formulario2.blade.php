@@ -1,44 +1,42 @@
 {{-- Copyright (C) 2019 Prof Matias Garcia para -http://www.profmatiasgarcia.com.ar- con licencia GNU GPL3.
 Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU según es publicada por la Free Software Foundation, bien con la versión 3 de dicha Licencia o bien (según su elección) con cualquier versión posterior. Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de GNU para más detalles.
 Debería haber recibido una copia de la Licencia Pública General junto con este programa. Si no ha sido así ingrese a -http://www.gnu.org/licenses/- --}}
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
     <style>
         body {
             background-color: #a7d4ef;
         }
-
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto mt-5">
-
                 <div class="card">
                     <div class="card-header tex">
                         Formulario de ingreso a Encuesta
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('enviodatos') }}">
-                            {{ csrf_field() }}
+                            @csrf
+
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nombre">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" name="nombre">
                                         @if ($errors->has('nombre'))
-                                            <small
-                                                class="form-text text-danger">{{ $errors->first('nombre') }}</small>
+                                            <small class="form-text text-danger">{{ $errors->first('nombre') }}</small>
                                         @endif
                                     </div>
                                 </div>
@@ -67,8 +65,7 @@ Debería haber recibido una copia de la Licencia Pública General junto con este
                                         <label for="carrera">Carrera</label>
                                         <input type="text" class="form-control" id="carrera" name="carrera">
                                         @if ($errors->has('carrera'))
-                                            <small
-                                                class="form-text text-danger">{{ $errors->first('carrera') }}</small>
+                                            <small class="form-text text-danger">{{ $errors->first('carrera') }}</small>
                                         @endif
                                     </div>
                                 </div>
@@ -119,17 +116,15 @@ Debería haber recibido una copia de la Licencia Pública General junto con este
                                     <small class="form-text text-danger">{{ $errors->first('edad') }}</small>
                                 @endif
                             </div>
+                            <br>
                             <button type="submit" class="btn btn-info">
                                 Enviar
                             </button>
                         </form>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
 </body>
-
 </html>
